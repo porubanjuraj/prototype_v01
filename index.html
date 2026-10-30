@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hotel Kaštieľ Mojmírovce – Váš deň v kaštieli</title>
+<meta name="description" content="Prototyp domovskej stránky Hotela Kaštieľ Mojmírovce – jeden deň, šesť zastávok.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-menu" viewBox="0 0 24 24" fill="none"><path d="M4 8H20M4 16H20" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24" fill="none"><path d="M16 3V7M8 3V7M4 11H20M4 7C4 6.46957 4.21071 5.96086 4.58579 5.58579C4.96086 5.21071 5.46957 5 6 5H18C18.5304 5 19.0391 5.21071 19.4142 5.58579C19.7893 5.96086 20 6.46957 20 7V19C20 19.5304 19.7893 20.0391 19.4142 20.4142C19.0391 20.7893 18.5304 21 18 21H6C5.46957 21 4.96086 20.7893 4.58579 20.4142C4.21071 20.0391 4 19.5304 4 19V7Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none"><path d="M6 9L12 15L18 9" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24" fill="none"><path d="M15 6L9 12L15 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24" fill="none"><path d="M9 6L15 12L9 18" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24" fill="none"><path d="M12 5V12M12 12V19M12 12H5M12 12H19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24" fill="none"><path d="M5 12H19" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 32 32" fill="none"><path d="M22.6667 9.33333L9.33333 22.6667M22.6667 21.3333V9.33333H10.6667" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></symbol>
+<symbol id="i-facebook" viewBox="0 0 24 24" fill="none"><path d="M11.9998 3.67773C7.58169 3.67773 4 7.27265 4 11.7071C4 15.4726 6.58299 18.6323 10.0674 19.5001V14.1609H8.41783V11.7071H10.0674V10.6498C10.0674 7.91693 11.2997 6.65021 13.9729 6.65021C14.4798 6.65021 15.3543 6.7501 15.7121 6.84966V9.0738C15.5233 9.05389 15.1953 9.04393 14.7879 9.04393C13.4763 9.04393 12.9694 9.54272 12.9694 10.8393V11.7071H15.5825L15.1335 14.1609H12.9694V19.6777C16.9306 19.1976 20 15.8124 20 11.7071C19.9997 7.27265 16.418 3.67773 11.9998 3.67773Z" fill="currentColor"/></symbol>
+<symbol id="i-instagram" viewBox="0 0 24 24" fill="none"><g>
+<path d="M12.0047 7.56915C14.2748 7.56915 16.1165 9.41015 16.1165 11.6794C16.1165 13.9486 14.2748 15.7896 12.0047 15.7896C9.73463 15.7896 7.89292 13.9486 7.89292 11.6794C7.89292 9.41015 9.73463 7.56915 12.0047 7.56915ZM12.0047 9.01313C10.532 9.01313 9.33746 10.2072 9.33746 11.6794C9.33746 13.1515 10.532 14.3456 12.0047 14.3456C13.4775 14.3456 14.672 13.1515 14.672 11.6794C14.672 10.2072 13.4775 9.01313 12.0047 9.01313Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+<path d="M16.2791 6.44718C16.8075 6.44718 17.2389 6.87845 17.2389 7.40668C17.2389 7.938 16.8075 8.36619 16.2791 8.36619C15.7476 8.36615 15.3192 7.93485 15.3192 7.40668C15.3192 6.87535 15.7506 6.44721 16.2791 6.44718Z" fill="currentColor"/>
+<path d="M12.0047 3.67773C14.1779 3.67773 14.45 3.68724 15.3068 3.72787C16.1572 3.76539 16.7387 3.9028 17.2484 4.0997C17.7737 4.30286 18.2209 4.57792 18.6649 5.02176C19.112 5.4656 19.3841 5.91256 19.5811 6.44392C19.7781 6.95027 19.9156 7.53491 19.9531 8.38507C19.9906 9.23827 20 9.51041 20 11.6826C20 13.8548 19.9906 14.1269 19.9531 14.9802C19.9156 15.8302 19.7781 16.4116 19.5811 16.921C19.3779 17.4461 19.1027 17.8931 18.6587 18.337C18.2147 18.7808 17.7675 19.0559 17.2422 19.259C16.7356 19.4559 16.1508 19.5933 15.3003 19.6308C14.4468 19.6684 14.1745 19.6777 12.0015 19.6777C9.82843 19.6777 9.55626 19.6684 8.70264 19.6308C7.85225 19.5933 7.2707 19.4559 6.76107 19.259C6.23576 19.0559 5.78856 18.7808 5.34454 18.337C4.89742 17.8931 4.62524 17.4463 4.41887 16.9181C4.22188 16.4117 4.08442 15.8271 4.0469 14.9769C4.00938 14.1236 4 13.8517 4 11.6794C4 9.50705 4.00938 9.23498 4.0469 8.37856C4.08443 7.52851 4.22191 6.94716 4.41887 6.43774C4.62524 5.91263 4.8974 5.4656 5.34454 5.02176C5.78854 4.57481 6.23559 4.30273 6.764 4.09644C7.27055 3.89952 7.8554 3.76213 8.7059 3.72462C9.55953 3.68711 9.83157 3.67773 12.0047 3.67773ZM12.0047 5.11878C9.86607 5.11878 9.61272 5.12816 8.7717 5.16567C7.99326 5.20004 7.56786 5.33108 7.28644 5.44046C6.91435 5.58424 6.64837 5.75628 6.36696 6.03759C6.08873 6.31572 5.91374 6.58454 5.76992 6.9564C5.66049 7.23769 5.5291 7.65975 5.4947 8.44107C5.45717 9.28187 5.44779 9.53524 5.44779 11.6732C5.44779 13.8079 5.45718 14.0611 5.4947 14.905C5.52909 15.6832 5.66049 16.1083 5.76992 16.3896C5.91376 16.7616 6.08554 17.0275 6.36696 17.3088C6.64523 17.5869 6.91436 17.7618 7.28644 17.9056C7.56786 18.015 7.99007 18.1463 8.7717 18.1807C9.61271 18.2182 9.86607 18.2276 12.0047 18.2276C14.1402 18.2276 14.3936 18.2182 15.2378 18.1807C16.0163 18.1463 16.4416 18.015 16.723 17.9056C17.0951 17.7618 17.3611 17.5901 17.6425 17.3088C17.9208 17.0306 18.0957 16.7616 18.2395 16.3896C18.349 16.1083 18.4804 15.6864 18.5147 14.905C18.5523 14.0642 18.5617 13.811 18.5617 11.6732C18.5617 9.53837 18.5523 9.285 18.5147 8.44107C18.4803 7.66287 18.349 7.23769 18.2395 6.9564C18.0957 6.58454 17.9238 6.31885 17.6425 6.03759C17.3642 5.75941 17.0951 5.58424 16.723 5.44046C16.4416 5.33108 16.0193 5.20004 15.2378 5.16567C14.3967 5.12816 14.1434 5.11878 12.0047 5.11878Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+</g></symbol>
+<symbol id="i-youtube" viewBox="0 0 24 24" fill="none"><path d="M20.8406 8.05124C20.8406 8.05124 20.6844 6.97293 20.2031 6.49945C19.5938 5.87629 18.9125 5.87324 18.6 5.83658C16.3625 5.67773 13.0031 5.67773 13.0031 5.67773H12.9969C12.9969 5.67773 9.6375 5.67773 7.4 5.83658C7.0875 5.87324 6.40625 5.87629 5.79688 6.49945C5.31563 6.97293 5.1625 8.05124 5.1625 8.05124C5.1625 8.05124 5 9.31895 5 10.5836V11.7688C5 13.0335 5.15937 14.3012 5.15937 14.3012C5.15937 14.3012 5.31562 15.3795 5.79375 15.853C6.40313 16.4761 7.20313 16.4547 7.55938 16.5219C8.84063 16.6411 13 16.6777 13 16.6777C13 16.6777 16.3625 16.6716 18.6 16.5158C18.9125 16.4792 19.5938 16.4761 20.2031 15.853C20.6844 15.3795 20.8406 14.3012 20.8406 14.3012C20.8406 14.3012 21 13.0365 21 11.7688V10.5836C21 9.31895 20.8406 8.05124 20.8406 8.05124ZM11.3469 13.2076V8.81186L15.6687 11.0174L11.3469 13.2076Z" fill="currentColor"/></symbol>
+</defs></svg>
+
+
+<!-- ============ 1 · HERO ============ -->
+<section class="hero" id="hero" aria-label="Úvod">
+  <div class="hero__bg"><img src="assets/img/hero.jpg" alt="Kaštieľ Mojmírovce v zeleni parku" data-parallax="hero"></div>
+  <div class="hero__shade"></div>
+
+  <header class="header">
+    <div class="header__left">
+      <button class="header__trigger" type="button" data-menu-open aria-expanded="false" aria-controls="menu">
+        <span class="icon-btn" aria-hidden="true"><svg class="ico ico--menu" aria-hidden="true"><use href="#i-menu"/></svg></span>
+        <span class="label-sm">Menu</span>
+      </button>
+      <a class="header__phone" href="tel:+421377798201">+421 37 77 98 201</a>
+    </div>
+    <a class="header__logo" href="#hero" aria-label="Hotel Kaštieľ Mojmírovce – domov"><img src="assets/svg/logo-header.svg" alt="Hotel Kaštieľ Mojmírovce"></a>
+    <div class="header__actions">
+      <a class="btn btn--outline" href="https://kastielmojmirovce.sk/pre-firmy/">Pre firmy</a>
+      <a class="btn btn--primary" href="#" data-float-open>Rezervovať</a>
+    </div>
+  </header>
+
+  <div class="hero__content">
+    <div class="hero__text">
+      <p class="hero__eyebrow">Miesto, ktoré dýcha históriou</p>
+      <h1 class="hero__title display-lg">Váš deň v kaštieli</h1>
+    </div>
+
+    <form class="booking" data-booking action="#" onsubmit="return false">
+      <div class="booking__fields">
+        <label class="booking__field">Príchod
+          <span class="datefield"><span data-date-text>24.10.2026</span><svg class="ico ico--calendar" aria-hidden="true"><use href="#i-calendar"/></svg><input type="date" name="arrival" value="2026-10-24" aria-label="Príchod" data-date="arrival"></span>
+        </label>
+        <label class="booking__field">Odchod
+          <span class="datefield"><span data-date-text>25.10.2026</span><svg class="ico ico--calendar" aria-hidden="true"><use href="#i-calendar"/></svg><input type="date" name="departure" value="2026-10-25" aria-label="Odchod" data-date="departure"></span>
+        </label>
+        <div class="guests" role="group" aria-label="Hostia">
+          <span>Hostia</span>
+          <div class="counter">
+            <button class="counter__btn" type="button" data-guests="-1" aria-label="Menej hostí">−</button>
+            <span class="counter__value" data-guests-value aria-live="polite">2</span>
+            <button class="counter__btn" type="button" data-guests="1" aria-label="Viac hostí">+</button>
+          </div>
+        </div>
+      </div>
+      <!-- PLACEHOLDER: URL rezervačného systému nie je známa -->
+      <a class="btn btn--primary" href="#">Skontrolovať dostupnosť</a>
+    </form>
+
+    <a class="icon-btn" href="#mapa" data-scroll-to aria-label="Skrolovať nižšie"><svg class="ico ico--chevron-down" aria-hidden="true"><use href="#i-chevron-down"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ 2 · MAP – SIX STOPS ============ -->
+<section class="sec sec-map" id="mapa" aria-labelledby="map-h">
+  <div class="wrap">
+    <div class="sec-map__content">
+      <p class="eyebrow" data-reveal>Jeden deň, šesť zastávok</p>
+      <h2 class="heading-2" id="map-h" data-reveal>Kaštieľ nespoznáte z jednej izby. Prejdite ho celý, od rannej hmly v parku až po noc v izbe<br>a nájdite si miesto, kam sa budete vracať.</h2>
+    </div>
+
+    <div class="map" data-map>
+      <img class="map__img" src="assets/img/map-canvas.jpg" alt="Letecký pohľad na areál kaštieľa">
+
+      <!-- PLACEHOLDER: texty a fotky zastávok sú len ilustračné (v dizajne je jediná karta „Bazén“) -->
+      <button class="hotspot" type="button" style="left:34.75rem;top:15.812rem" data-place="kastiel" aria-label="Kaštieľ"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      <button class="hotspot" type="button" style="left:30.188rem;top:26rem" data-place="park" aria-label="Park"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      <button class="hotspot" type="button" style="left:56rem;top:17.688rem" data-place="restauracia" aria-label="Reštaurácia"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      <button class="hotspot is-active" type="button" style="left:44.562rem;top:25rem" data-place="bazen" aria-label="Bazén"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      <button class="hotspot" type="button" style="left:60.812rem;top:37.312rem" data-place="sport" aria-label="Šport v areáli"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+      <button class="hotspot" type="button" style="left:6.625rem;top:38.438rem" data-place="pivnica" aria-label="Vínna pivnica"><svg class="ico ico--plus" aria-hidden="true"><use href="#i-plus"/></svg><svg class="ico ico--minus" aria-hidden="true"><use href="#i-minus"/></svg></button>
+
+      <article class="place is-open" data-place-card aria-live="polite">
+        <h3 class="place__title heading-3" data-place-title>Bazén</h3>
+        <div class="place__photo"><img src="assets/img/place-photo.jpg" alt="" data-place-img></div>
+        <p class="place__text body-sm" data-place-text>Bazén 25 m, sauny, bowling a strelnica pod jednou strechou.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3 · MORNING – PARK ============ -->
+<section class="sec sec-park" id="park" aria-labelledby="park-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="time" data-reveal>8:00</p>
+      <h2 class="heading-1" id="park-h" data-reveal>Ráno patrí parku</h2>
+    </div>
+    <div class="cols">
+      <div class="cols__media"><img src="assets/img/park-media.jpg" alt="Park pri kaštieli s fontánou a okrasnými živými plotmi" data-reveal-img data-parallax-img></div>
+      <div class="cols__content">
+        <div class="park-stack">
+          <div class="park-stack__img"><img src="assets/img/park-small.jpg" alt="Kaštieľ za fontánou v parku" data-reveal-img></div>
+          <p class="body-md body-451" data-reveal>Hmla sa ešte drží pri fontáne v strede parku. Prechádzate sa pomedzi staré stromy a kaštieľ sa pred vami zjavuje v prvom svetle. Tu dnes tímy trénujú spoluprácu a páry si sľubujú pred celou rodinou.</p>
+        </div>
+        <div class="rows" data-reveal-rows>
+          <a class="row" href="https://kastielmojmirovce.sk/pre-firmy/"><span class="row__label">Teambuilding</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="row" href="https://kastielmojmirovce.sk/svadba-v-kastieli-mojmirovce/"><span class="row__label">Obrad pod holým nebom</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <!-- Decoration: leaves (Figma 48:172) -->
+    <div class="deco" aria-hidden="true" style="inset:1.88% -2.55% 71.5% 80.04%">
+      <div class="deco__rot" style="width:hypot(32.859cqw,49.2063cqh);height:hypot(-67.141cqw,50.7937cqh);rotate:54.6deg;opacity:.7"><div class="deco__in" style="inset:-0.29% -0.42% -0.64% -0.42%"><img src="assets/svg/leaf-park-1.svg" alt=""></div></div>
+    </div>
+    <div class="deco" aria-hidden="true" style="inset:14.84% 10.97% 62.89% 71.73%">
+      <div class="deco__rot" style="width:hypot(-70.5057cqw,27.3638cqh);height:hypot(29.4943cqw,72.6362cqh);rotate:-21.65deg;scale:-1 1;opacity:.7"><div class="deco__in" style="inset:-0.31% -0.33% -0.56% -0.33%"><img src="assets/svg/leaf-park-2.svg" alt=""></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4 · MORNING – HALL ============ -->
+<section class="sec sec-hall-morning" id="hala" aria-labelledby="hall-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="time" data-reveal>10:00</p>
+      <h2 class="heading-1" id="hall-h" data-reveal>Za dverami<br>sa čas spomalí</h2>
+    </div>
+    <div class="hall-text-row">
+      <div class="spacer"></div>
+      <div class="wrapper"><p class="body-md body-451" data-reveal>Vstupná hala víta divadelným schodiskom. Nad ním svieti tereziánsky luster a zo stien na vás hľadia portréty Slovákov, ktorí písali dvadsiate storočie. Dnes tu rokujú tímy, oslavujú rodiny a skladajú sľuby páry.</p></div>
+    </div>
+    <div class="deco" aria-hidden="true" style="inset:71.38% 68.33% -23.64% 10.86%">
+      <div class="deco__rot" style="width:hypot(-51.0079cqw,23.4849cqh);height:hypot(48.9921cqw,76.5151cqh);rotate:-28.5deg;scale:-1 1"><div class="deco__in" style="inset:-0.27% -0.47% -0.59% -0.47%"><img src="assets/svg/leaf-hall.svg" alt=""></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · HALL SLIDER (pinned, 5 slides) ============ -->
+<section class="hall" id="priestory" aria-roledescription="carousel" aria-label="Priestory kaštieľa">
+  <div class="hall__bg">
+    <img class="hall__bgimg" src="assets/img/hall-01.jpg" alt="" data-hall-bg>
+    <img class="hall__bgimg" src="assets/img/hall-02.jpg" alt="" data-hall-bg>
+    <img class="hall__bgimg" src="assets/img/hall-03.jpg" alt="" data-hall-bg>
+    <img class="hall__bgimg" src="assets/img/hall-04.jpg" alt="" data-hall-bg>
+    <img class="hall__bgimg" src="assets/img/hall-05.jpg" alt="" data-hall-bg>
+  </div>
+  <div class="hall__shade"></div>
+  <div class="hall__ui">
+    <div class="hall__card" data-hall-card>
+      <!-- PLACEHOLDER: texty slidov sú pracovná verzia UX writera -->
+      <article class="slide" data-slide aria-label="1 z 5">
+        <div class="slide__head"><p class="slide__count">01 – <span>05</span></p><h3 class="slide__title heading-3">Vstupná hala</h3></div>
+        <div class="slide__photo"><img src="assets/img/hall-01.jpg" alt="Vstupná hala s divadelným schodiskom"></div>
+        <p class="slide__text body-md">Divadelné schodisko, tereziánsky luster<br>a portréty najznámejších Slovákov.</p>
+      </article>
+      <article class="slide" data-slide aria-label="2 z 5">
+        <div class="slide__head"><p class="slide__count">02 – <span>05</span></p><h3 class="slide__title heading-3">Chodba tolerancie</h3></div>
+        <div class="slide__photo"><img src="assets/img/hall-02.jpg" alt="Chodba tolerancie"></div>
+        <p class="slide__text body-md">Ústredná chodba so symbolmi svetových<br>náboženstiev a portrétmi filozofov,<br>spisovateľov a vedcov.</p>
+      </article>
+      <article class="slide" data-slide aria-label="3 z 5">
+        <div class="slide__head"><p class="slide__count">03 – <span>05</span></p><h3 class="slide__title heading-3">Africký salón</h3></div>
+        <div class="slide__photo"><img src="assets/img/hall-03.jpg" alt="Africký salón"></div>
+        <p class="slide__text body-md">Obrazy a masky z Afriky, trofeje<br>z poľovačiek grófa Huňadyho.</p>
+      </article>
+      <article class="slide" data-slide aria-label="4 z 5">
+        <div class="slide__head"><p class="slide__count">04 – <span>05</span></p><h3 class="slide__title heading-3">Hudobný salón</h3></div>
+        <div class="slide__photo"><img src="assets/img/hall-04.jpg" alt="Hudobný salón"></div>
+        <p class="slide__text body-md">Tóny hudobnej klasiky a portréty<br>významných hudobných majstrov.</p>
+      </article>
+      <article class="slide" data-slide aria-label="5 z 5">
+        <div class="slide__head"><p class="slide__count">05 – <span>05</span></p><h3 class="slide__title heading-3">Chodba do rozprávky</h3></div>
+        <div class="slide__photo"><img src="assets/img/hall-05.jpg" alt="Chodba do rozprávky"></div>
+        <p class="slide__text body-md">Maľba 18 × 2,3 m od Táne Žitňanovej<br>s výjavmi z Dobšinského rozprávok.</p>
+      </article>
+    </div>
+    <p class="hall__hint" data-hall-hint>(Skrolujte)</p>
+    <a class="hall__link" href="https://kastielmojmirovce.sk/priestory/"><span class="hall__link-text">Priestory kaštieľa</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </div>
+</section>
+
+<!-- ============ 6 · LUNCH – RESTAURANT ============ -->
+<section class="sec sec-lunch" id="obed" aria-labelledby="lunch-h">
+  <div class="wrap">
+    <div class="head">
+      <p class="time" data-reveal>12:30</p>
+      <h2 class="heading-1" id="lunch-h" data-reveal>Šlachtický obed</h2>
+    </div>
+    <div class="cols">
+      <div class="cols__media"><img src="assets/img/lunch.jpg" alt="Jelenia omáčka nalievaná na morské plody" data-reveal-img data-parallax-img></div>
+      <div class="cols__content">
+        <p class="body-md body-425" data-reveal>Reštaurácia sídli v bývalom letnom sídle grófa Huňadyho. Steny zdobia trofeje a obrazy v poľovníckom štýle,<br>na tanieri je jelení guláš a jedlá z čerstvých surovín.<br>Denné menu ponúka od 11:00 do 14:00 štyri jedlá<br>na výber za 9,50 €.</p>
+        <div class="rows" data-reveal-rows>
+          <a class="row" href="https://kastielmojmirovce.sk/restauracia/"><span class="row__label">Denné menu</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="row" href="https://kastielmojmirovce.sk/restauracia/"><span class="row__label">À la carte</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="row" href="https://kastielmojmirovce.sk/zazitkova-gastronomia/"><span class="row__label">Zážitková gastronómia</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="deco" aria-hidden="true" style="inset:-0.59% -7.64% 69.83% 77.5%">
+      <div class="deco__rot" style="width:hypot(-69.3438cqw,37.8019cqh);height:hypot(30.6562cqw,62.1981cqh);rotate:-27.4deg;scale:-1 1"><div class="deco__in" style="inset:-0.31% -0.27% -0.68% -0.27%"><img src="assets/svg/leaf-lunch.svg" alt=""></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7 · AFTERNOON – SPORT & RELAX ============ -->
+<section class="sec sec-afternoon" id="popoludnie" aria-labelledby="aft-h">
+  <div class="wrap">
+    <div class="sec-afternoon__head">
+      <p class="time" data-reveal>15:30</p>
+      <h2 class="heading-1" id="aft-h" data-reveal>Popoludnie je pre pohyb,<br>alebo oddych</h2>
+    </div>
+
+    <div class="cards" data-teasers>
+      <a class="teaser" href="#" data-card>
+        <div class="teaser__photo"><img src="assets/img/teaser-1.jpg" alt=""></div>
+        <div class="teaser__caption"><span>Šport v areáli</span><svg class="ico ico--32 ico--arrow" aria-hidden="true" style="color:var(--color-cream)"><use href="#i-arrow"/></svg></div>
+      </a>
+      <a class="teaser" href="#" data-card>
+        <div class="teaser__photo"><img src="assets/img/teaser-2.jpg" alt=""></div>
+        <div class="teaser__caption"><span>Wellness a bazén</span><svg class="ico ico--32 ico--arrow" aria-hidden="true" style="color:var(--color-cream)"><use href="#i-arrow"/></svg></div>
+      </a>
+      <a class="teaser" href="#" data-card>
+        <div class="teaser__photo"><img src="assets/img/teaser-3.jpg" alt=""></div>
+        <div class="teaser__caption"><span>Strelnica</span><svg class="ico ico--32 ico--arrow" aria-hidden="true" style="color:var(--color-cream)"><use href="#i-arrow"/></svg></div>
+      </a>
+      <!-- PLACEHOLDER: 4. slide chýba v dizajne -->
+      <a class="teaser" href="#" data-card>
+        <div class="teaser__photo"><img src="assets/img/teaser-4.jpg" alt=""></div>
+        <div class="teaser__caption"><span>Bowling</span><svg class="ico ico--32 ico--arrow" aria-hidden="true" style="color:var(--color-cream)"><use href="#i-arrow"/></svg></div>
+      </a>
+      <div class="pagination">
+        <div class="pagination__row">
+          <button class="icon-btn" type="button" data-teaser-prev aria-label="Predchádzajúca"><svg class="ico ico--chevron-left" aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+          <button class="icon-btn" type="button" data-teaser-next aria-label="Nasledujúca"><svg class="ico ico--chevron-right" aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+        </div>
+        <p class="pagination__count" data-teaser-count>02 – <span>04</span></p>
+      </div>
+    </div>
+
+    <p class="sec-afternoon__desc body-md" data-reveal>Popoludnie si poskladáte sami. Preplávate 25 metrov v 27-stupňovej vode, potom prichádza sauna, masáž alebo Kneippov kúpeľ. Ak chcete pohyb, je tu bowling, plážový volejbal, minigolf, tenis a v podzemí strelnica, na ktorú nepotrebujete zbrojný preukaz.</p>
+  </div>
+</section>
+
+<!-- ============ 8 · FACADE PHOTO ============ -->
+<section class="facade" aria-label="Fasáda kaštieľa">
+  <img src="assets/img/facade.jpg" alt="Fasáda kaštieľa Mojmírovce" data-parallax="facade">
+</section>
+
+<!-- ============ 9 · EVENING – WINE CELLAR ============ -->
+<section class="sec sec-evening" id="vecer" aria-labelledby="eve-h">
+  <div class="inner">
+    <div class="marquee" aria-hidden="false">
+      <p class="time" data-reveal>19:00</p>
+      <div class="marquee__track display-xl" data-marquee>
+        <span class="marquee__text">In vino veritas</span><img class="marquee__dot" src="assets/svg/dot.svg" alt="">
+        <span class="marquee__text">In vino veritas</span><img class="marquee__dot" src="assets/svg/dot.svg" alt="">
+        <span class="marquee__text">In vino veritas</span><img class="marquee__dot" src="assets/svg/dot.svg" alt="">
+        <span class="marquee__text">In vino veritas</span><img class="marquee__dot" src="assets/svg/dot.svg" alt="">
+        <span class="marquee__text">In vino veritas</span><img class="marquee__dot" src="assets/svg/dot.svg" alt="">
+      </div>
+    </div>
+    <div class="cellar">
+      <div class="cellar__head"><h2 class="heading-1" id="eve-h" data-reveal>Večer vo vínnej pivnici</h2></div>
+      <div class="cols">
+        <div class="cols__media"><img src="assets/img/wine.jpg" alt="Klenbová tehlová vínna pivnica" data-reveal-img data-parallax-img></div>
+        <div class="cols__content">
+          <p class="body-md body-425" data-reveal>Schádzate do klenbovej tehlovej pivnice, ktorá tu stojí tristo rokov. Na stenách visí 120 obrazov od 24 maliarov, všetky o víne. Pod vedením someliéra ochutnáte<br>a pochopíte, prečo sa hovorí in vino veritas.<br>Za rekonštrukciu dostal architekt Viktor Šabík<br>cenu Brick Award 2010.</p>
+          <div class="rows" data-reveal-rows>
+            <a class="row row--dark" href="https://kastielmojmirovce.sk/vinna-pivnica/"><span class="row__label">Vínna pivnica</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="row row--dark" href="https://kastielmojmirovce.sk/vinna-pivnica/"><span class="row__label">Degustácie</span><svg class="ico ico--32 ico--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10 · NIGHT – ROOMS ============ -->
+<section class="sec sec-rooms" id="izby" aria-labelledby="rooms-h">
+  <div class="wrap">
+    <div class="intro">
+      <div class="intro__head">
+        <p class="time" data-reveal>22:30</p>
+        <h2 class="heading-1" id="rooms-h" data-reveal>Noc rozpráva povesti</h2>
+      </div>
+      <p class="intro__text body-md" data-reveal>Bowling bar cez víkend svieti do polnoci. Potom idete do izby s pastelovými farbami a starožitnými akcentmi. Zajtra sa nikam neponáhľate.</p>
+    </div>
+
+    <!-- Room slider: pinned, photos scroll vertically while the text column swaps (cf. hillbrookestate.co.nz) -->
+    <div class="roomslider" data-rooms aria-roledescription="carousel" aria-label="Izby">
+      <div class="rs__info">
+        <!-- PLACEHOLDER: ceny Biely a Prezidentský apartmán (240 / 340 €) sú vymyslené -->
+        <div class="rs__room" data-room>
+          <p class="rs__count">01 – <span>05</span></p>
+          <div class="rs__details"><p class="rs__price">130 € / noc</p><h3 class="rs__title heading-2">Izba Standard</h3><p class="body-md">Pastelové farby a starožitné akcenty.<br>Každá izba má svoj príbeh.</p></div>
+        </div>
+        <div class="rs__room" data-room>
+          <p class="rs__count">02 – <span>05</span></p>
+          <div class="rs__details"><p class="rs__price">150 € / noc</p><h3 class="rs__title heading-2">Izba Comfort</h3><p class="body-md">Viac priestoru a pokoja pre dvoch.<br>Manželská posteľ alebo dve lôžka.</p></div>
+        </div>
+        <div class="rs__room" data-room>
+          <p class="rs__count">03 – <span>05</span></p>
+          <div class="rs__details"><p class="rs__price">180 € / noc</p><h3 class="rs__title heading-2">Izba Deluxe</h3><p class="body-md">Veľká izba s pohovkou pre ďalších dvoch.<br>Ideálna pre rodinu a dlhší pobyt.</p></div>
+        </div>
+        <div class="rs__room" data-room>
+          <p class="rs__count">04 – <span>05</span></p>
+          <div class="rs__details"><p class="rs__price">240 € / noc</p><h3 class="rs__title heading-2">Biely apartmán</h3><p class="body-md">Oddelená spálňa a priestranný salón.<br>Vkusne zladený interiér s prístelkou.</p></div>
+        </div>
+        <div class="rs__room" data-room>
+          <p class="rs__count">05 – <span>05</span></p>
+          <div class="rs__details"><p class="rs__price">340 € / noc</p><h3 class="rs__title heading-2">Prezidentský apartmán</h3><p class="body-md">Dve spálne a výhľad do záhrady.<br>Výnimočný apartmán pre výnimočné chvíle.</p></div>
+        </div>
+        <a class="btn btn--primary rs__btn" href="#" data-float-open>Rezervovať izbu</a>
+      </div>
+      <div class="rs__view">
+        <div class="rs__strip" data-rooms-strip>
+          <div class="rs__frame"><img src="assets/img/room-01.jpg" alt="Izba Standard"></div>
+          <div class="rs__frame"><img src="assets/img/room-02.jpg" alt="Izba Comfort"></div>
+          <div class="rs__frame"><img src="assets/img/room-03.jpg" alt="Izba Deluxe"></div>
+          <div class="rs__frame"><img src="assets/img/room-04.jpg" alt="Biely apartmán"></div>
+          <div class="rs__frame"><img src="assets/img/room-05.jpg" alt="Prezidentský apartmán"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deco" aria-hidden="true" style="left:-10.438rem;top:7.75rem;width:24.104rem;height:24.124rem">
+      <div class="deco__rot" style="width:hypot(61.1082cqw,61.2871cqh);height:hypot(-38.8918cqw,38.7129cqh);rotate:45.11deg"><div class="deco__in" style="inset:-0.39% -0.25% -0.39% -0.55%"><img src="assets/svg/leaf-rooms.svg" alt=""></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 · CLOSING – OFFERS ============ -->
+<section class="sec sec-offers" id="ponuky" aria-labelledby="off-h">
+  <div class="inner">
+    <h2 class="heading-1" id="off-h" data-reveal>Vyberte si,<br>aký bude váš deň</h2>
+    <div class="offers" data-offers>
+      <article class="offer is-active" data-offer tabindex="0">
+        <div class="offer__bg">
+          <img src="assets/img/offer-team.jpg" alt="" data-crop-active="left:-11.55%;top:-68.44%;width:111.55%;height:178.81%" data-crop-idle="left:-6.91%;top:-24.68%;width:106.91%;height:124.6%" style="left:-11.55%;top:-68.44%;width:111.55%;height:178.81%">
+          <div class="offer__shade" data-shade-active="linear-gradient(191.847deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)" data-shade-idle="linear-gradient(199.475deg, rgba(0,0,0,0) 28.015%, rgba(0,0,0,.7) 69.833%)" style="background-image:linear-gradient(191.847deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)"></div>
+        </div>
+        <div class="offer__text"><h3 class="heading-2">Tím</h3><p class="body-md">Salóny, sály pre 100 – 200 hostí, technika, jedlo, šport a ubytovanie pod jednou strechou.</p></div>
+        <a class="btn btn--outline" href="https://kastielmojmirovce.sk/pre-firmy/">Dopyt pre firmu</a>
+        <a class="btn btn--light" href="https://kastielmojmirovce.sk/pre-firmy/">Dopyt pre firmu</a>
+      </article>
+      <article class="offer" data-offer tabindex="0">
+        <div class="offer__bg">
+          <img src="assets/img/offer-wedding.jpg" alt="" data-crop-active="left:-11.55%;top:-68.44%;width:111.55%;height:178.81%" data-crop-idle="left:-6.91%;top:-24.68%;width:106.91%;height:124.6%" style="left:-6.91%;top:-24.68%;width:106.91%;height:124.6%">
+          <div class="offer__shade" data-shade-active="linear-gradient(191.847deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)" data-shade-idle="linear-gradient(199.475deg, rgba(0,0,0,0) 28.015%, rgba(0,0,0,.7) 69.833%)" style="background-image:linear-gradient(199.475deg, rgba(0,0,0,0) 28.015%, rgba(0,0,0,.7) 69.833%)"></div>
+        </div>
+        <div class="offer__text"><h3 class="heading-2">Svadby a oslavy</h3><p class="body-md">Obrad v parku alebo v salóne, hostina<br>v žrebčíne či pivnici.</p></div>
+        <a class="btn btn--outline" href="https://kastielmojmirovce.sk/oslavy-a-svadby/">Spýtať sa na termín</a>
+        <a class="btn btn--light" href="https://kastielmojmirovce.sk/oslavy-a-svadby/">Spýtať sa na termín</a>
+      </article>
+      <article class="offer" data-offer tabindex="0">
+        <div class="offer__bg">
+          <img src="assets/img/offer-stay.jpg" alt="" data-crop-active="left:-16.95%;top:0%;width:116.95%;height:100%" data-crop-idle="left:-64.2%;top:0%;width:164.23%;height:100%" style="left:-64.2%;top:0%;width:164.23%;height:100%">
+          <div class="offer__shade" data-shade-active="linear-gradient(196.413deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)" data-shade-idle="linear-gradient(196.413deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)" style="background-image:linear-gradient(196.413deg, rgba(0,0,0,0) 41.34%, rgba(0,0,0,.7) 89.073%)"></div>
+        </div>
+        <div class="offer__text"><h3 class="heading-2">Pobyty</h3><p class="body-md">Izba, večera, wellness a bazén. Pre dvoch aj pre celú rodinu.</p></div>
+        <a class="btn btn--outline" href="https://kastielmojmirovce.sk/pobytove-baliky/">Rezervovať pobyt</a>
+        <a class="btn btn--light" href="https://kastielmojmirovce.sk/pobytove-baliky/">Rezervovať pobyt</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 · FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__divider"></div>
+      <img class="footer__logo" src="assets/svg/logo-footer.svg" alt="Hotel Kaštieľ Mojmírovce">
+      <div class="footer__divider"></div>
+    </div>
+    <div class="footer__body">
+      <div class="footer__contact">
+        <p class="heading-4" style="width:100%">Mojmírovce 919<br>951 15 Mojmírovce</p>
+        <p class="heading-4" style="width:100%"><a href="tel:+421907846040">+421 907 846 040</a><br><a href="mailto:recepcia@kastielmojmirovce.sk">recepcia@kastielmojmirovce.sk</a></p>
+        <!-- PLACEHOLDER: URL sociálnych sietí -->
+        <div class="footer__social">
+          <a class="icon-btn" href="#" aria-label="Facebook"><svg class="ico ico--facebook" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a class="icon-btn" href="#" aria-label="Instagram"><svg class="ico ico--instagram" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a class="icon-btn" href="#" aria-label="YouTube"><svg class="ico ico--youtube" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+      <div class="footer__tagline"><p class="heading-2">Miesto, kam sa<br>budete vracať.</p></div>
+    </div>
+    <div class="footer__bottom">
+      <div class="legal">
+        <p>Copyright © 2026 Kaštieľ Mojmírovce</p>
+        <div class="legal__links"><a href="#">Ochrana osobných údajov</a><a href="#">Všeobecné obchodné podmienky</a></div>
+        <p class="legal__right">Designed by Juraj Porubän</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ OPEN MENU ============ -->
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Hlavné menu" data-menu>
+  <div class="menu__inner">
+    <div class="menu__header">
+      <div class="menu__header-side">
+        <button class="menu__close" type="button" data-menu-close aria-label="Zavrieť menu"><img src="assets/svg/menu-close.svg" alt="" width="48" height="48"></button>
+        <span class="menu__label">Zavrieť</span>
+      </div>
+      <a class="menu__logo" href="#hero" data-menu-close aria-label="Domov"><img src="assets/svg/logo-header.svg" alt="Hotel Kaštieľ Mojmírovce"></a>
+      <div class="menu__header-side menu__header-side--right">
+        <a class="btn btn--outline" href="https://kastielmojmirovce.sk/pre-firmy/">Pre firmy</a>
+        <a class="btn btn--light" href="#" data-float-open data-menu-close>Rezervovať</a>
+      </div>
+    </div>
+    <div class="menu__body">
+      <div class="menu__panel">
+        <nav class="menu__nav" aria-label="Hlavná navigácia" data-menu-nav>
+          <!-- Sitemap: client-approved structure (FIGMA-HANDOFF §3.1) -->
+          <a class="menu-item" href="https://kastielmojmirovce.sk/pre-firmy/" data-sub="firmy"><span class="menu-item__idx">01</span><span class="menu-item__title heading-3">Firmy</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/pobytove-baliky/" data-sub="pobyty"><span class="menu-item__idx">02</span><span class="menu-item__title heading-3">Pobyty a ponuky</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/oslavy-a-svadby/" data-sub="svadby"><span class="menu-item__idx">03</span><span class="menu-item__title heading-3">Svadby a oslavy</span></a>
+          <a class="menu-item" href="#izby" data-sub="ubytovanie" data-menu-close><span class="menu-item__idx">04</span><span class="menu-item__title heading-3">Ubytovanie</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/restauracia/" data-sub="gastro"><span class="menu-item__idx">05</span><span class="menu-item__title heading-3">Gastronómia a pivnica</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/sport-a-relax/" data-sub="wellness"><span class="menu-item__idx">06</span><span class="menu-item__title heading-3">Wellness a šport</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/priestory/" data-sub="priestory"><span class="menu-item__idx">07</span><span class="menu-item__title heading-3">Priestory</span></a>
+          <a class="menu-item" href="https://kastielmojmirovce.sk/historia/" data-sub="kastiel"><span class="menu-item__idx">08</span><span class="menu-item__title heading-3">O kaštieli</span></a>
+        </nav>      </div>
+      <div class="menu__side" data-menu-side>
+        <div class="menu__photo" data-sub-panel="none"><img src="assets/img/menu.jpg" alt="Kaštieľ Mojmírovce"></div>
+        <div class="submenu" data-sub-panel="firmy"><p class="submenu__title">Firmy</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/pre-firmy/">Porady, školenia, konferencie</a><a class="heading-4" href="https://kastielmojmirovce.sk/pre-firmy/">Firemné eventy</a><a class="heading-4" href="https://kastielmojmirovce.sk/pre-firmy/">Teambuilding</a><a class="heading-4" href="https://kastielmojmirovce.sk/pre-firmy/">Firemný rozvoj</a></div>
+        <div class="submenu" data-sub-panel="pobyty"><p class="submenu__title">Pobyty a ponuky</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/pobytove-baliky/">Wellness pobyt</a><a class="heading-4" href="https://kastielmojmirovce.sk/pobytove-baliky/">Víkend v kaštieli</a><a class="heading-4" href="https://kastielmojmirovce.sk/pobytove-baliky/">Rodinný pobyt</a><a class="heading-4" href="https://kastielmojmirovce.sk/pobytove-baliky/">Sezónne ponuky</a></div>
+        <div class="submenu" data-sub-panel="svadby"><p class="submenu__title">Svadby a oslavy</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/svadba-v-kastieli-mojmirovce/">Svadba v kaštieli</a><a class="heading-4" href="https://kastielmojmirovce.sk/oslavy-a-svadby/">Rodinné oslavy</a></div>
+        <div class="submenu" data-sub-panel="ubytovanie"><p class="submenu__title">Ubytovanie</p>
+          <a class="heading-4" href="#izby" data-menu-close>Izby v kaštieli</a><a class="heading-4" href="https://kastielmojmirovce.sk/">Depandance</a></div>
+        <div class="submenu" data-sub-panel="gastro"><p class="submenu__title">Gastronómia a pivnica</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/restauracia/">Reštaurácia</a><a class="heading-4" href="https://kastielmojmirovce.sk/zazitkova-gastronomia/">Zážitková gastronómia</a><a class="heading-4" href="https://kastielmojmirovce.sk/vinna-pivnica/">Vínna pivnica</a></div>
+        <div class="submenu" data-sub-panel="wellness"><p class="submenu__title">Wellness a šport</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/wellness-a-bazen/">Wellness a bazén</a><a class="heading-4" href="https://kastielmojmirovce.sk/bowling-bowling-bar/">Bowling</a><a class="heading-4" href="https://kastielmojmirovce.sk/strelnica/">Strelnica</a><a class="heading-4" href="https://kastielmojmirovce.sk/sport-a-relax/">Šport v areáli</a><a class="heading-4" href="https://kastielmojmirovce.sk/sport-a-relax/">Športové sústredenia</a></div>
+        <div class="submenu" data-sub-panel="priestory"><p class="submenu__title">Priestory</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/priestory/">Sály podľa účelu</a><a class="heading-4" href="https://kastielmojmirovce.sk/priestory/">Kapacity a usporiadanie</a></div>
+        <div class="submenu" data-sub-panel="kastiel"><p class="submenu__title">O kaštieli</p>
+          <a class="heading-4" href="https://kastielmojmirovce.sk/historia/">História</a><a class="heading-4" href="https://kastielmojmirovce.sk/historia/">Park a galéria</a><a class="heading-4" href="https://kastielmojmirovce.sk/">Recenzie</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FLOATING RESERVATION ============ -->
+<aside class="float" data-float aria-label="Rezervácia">
+  <button class="float__pill" type="button" data-float-toggle aria-expanded="false">
+    <span class="float__circle"><svg class="ico ico--calendar" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+    <span>Rezervovať pobyt</span>
+  </button>
+  <form class="float__panel" data-booking onsubmit="return false" role="dialog" aria-label="Rezervácia">
+    <div class="float__head"><span>Rezervácia</span><button class="float__close" type="button" data-float-close aria-label="Zavrieť">×</button></div>
+    <div class="float__dates">
+      <label class="float__field"><span>Príchod</span><span class="datefield"><span data-date-text>24.10.2026</span><svg class="ico ico--calendar" aria-hidden="true"><use href="#i-calendar"/></svg><input type="date" value="2026-10-24" aria-label="Príchod" data-date="arrival"></span></label>
+      <label class="float__field"><span>Odchod</span><span class="datefield"><span data-date-text>25.10.2026</span><svg class="ico ico--calendar" aria-hidden="true"><use href="#i-calendar"/></svg><input type="date" value="2026-10-25" aria-label="Odchod" data-date="departure"></span></label>
+    </div>
+    <div class="guests" role="group" aria-label="Hostia">
+      <span>Hostia</span>
+      <div class="counter">
+        <button class="counter__btn" type="button" data-guests="-1" aria-label="Menej hostí">−</button>
+        <span class="counter__value" data-guests-value aria-live="polite">2</span>
+        <button class="counter__btn" type="button" data-guests="1" aria-label="Viac hostí">+</button>
+      </div>
+    </div>
+    <a class="btn btn--primary float__submit" href="#">Skontrolovať dostupnosť</a>
+    <a class="float__link" href="https://kastielmojmirovce.sk/pre-firmy/">Firmy a akcie</a>
+  </form>
+</aside>
+
+<!-- ============ STICKY HEADER (shows only while scrolling up, below the hero) ============ -->
+<header class="stickynav" data-stickynav inert>
+  <div class="stickynav__inner">
+    <div class="stickynav__left">
+      <button class="stickynav__trigger" type="button" data-menu-open aria-expanded="false" aria-controls="menu">
+        <span class="icon-btn icon-btn--dark" aria-hidden="true"><svg class="ico" aria-hidden="true"><use href="#i-menu"/></svg></span>
+        <span class="label-sm">Menu</span>
+      </button>
+      <a class="stickynav__phone" href="tel:+421377798201">+421 37 77 98 201</a>
+    </div>
+    <a class="stickynav__logo" href="#hero" aria-label="Hotel Kaštieľ Mojmírovce – hore"><img src="assets/svg/logo-dark.svg" alt="Hotel Kaštieľ Mojmírovce"></a>
+    <div class="stickynav__actions">
+      <a class="btn btn--outline-dark" href="https://kastielmojmirovce.sk/pre-firmy/">Pre firmy</a>
+      <a class="btn btn--primary" href="#" data-float-open>Rezervovať</a>
+    </div>
+  </div>
+</header>
+
+<script src="assets/vendor/gsap.min.js"></script>
+<script src="assets/vendor/ScrollTrigger.min.js"></script>
+<script src="assets/vendor/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

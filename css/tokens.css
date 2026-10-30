@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Kaštieľ Mojmírovce – design tokens
+   Source of truth: Figma file "Kastiel-Mojmirovce---Web" (key X1Hw52IQZlvPIzWC0AVYn0)
+   Variable names below are the WEB code syntax stored on each Figma variable.
+   Do not hard-code hex values in components – always use the semantic tokens.
+   ========================================================================== */
+
+:root {
+  /* ---------- Primitives (collection "Primitives") ---------- */
+  --color-charcoal: #231f20;
+  --color-burgundy: #5b182d;
+  --color-pine: #064b47;
+  --color-bronze: #a56e41;
+  --color-sand: #cea57b;
+  --color-cream: #f8f2ec;
+  --color-white: #ffffff;
+  --color-mist: #dadada;
+  --color-charcoal-80: rgb(35 31 32 / 0.8);
+  --color-charcoal-20: rgb(35 31 32 / 0.2);
+  --color-charcoal-5: rgb(35 31 32 / 0.05);
+  --color-charcoal-4: rgb(35 31 32 / 0.04);
+  --color-cream-80: rgb(248 242 236 / 0.8);
+  --color-black-30: rgb(0 0 0 / 0.3);
+
+  /* ---------- Semantic colors (collection "Color") ---------- */
+  /* backgrounds */
+  --color-bg-page: var(--color-cream);
+  --color-bg-surface: var(--color-white);
+  --color-bg-brand: var(--color-burgundy);
+  --color-bg-accent: var(--color-pine);
+  --color-bg-inverse: var(--color-charcoal);
+  --color-bg-tint: var(--color-charcoal-5);
+  --color-bg-tint-subtle: var(--color-charcoal-4);
+  --color-bg-placeholder: var(--color-mist);
+  --color-bg-overlay: var(--color-black-30);
+  /* text */
+  --color-text-default: var(--color-charcoal);
+  --color-text-muted: var(--color-charcoal-80);
+  --color-text-brand: var(--color-burgundy);
+  --color-text-accent: var(--color-pine);
+  --color-text-on-dark: var(--color-cream);
+  --color-text-on-dark-muted: var(--color-cream-80);
+  --color-text-on-brand: var(--color-white);
+  /* borders */
+  --color-border-default: var(--color-charcoal);
+  --color-border-subtle: var(--color-charcoal-20);
+  --color-border-brand: rgb(91 24 45 / 0.2);        /* 20 % burgundy (alpha is part of the token) */
+  --color-border-on-dark: rgb(248 242 236 / 0.2);   /* 20 % cream */
+  --color-border-on-brand: var(--color-white);
+  --color-border-brand-strong: var(--color-burgundy);   /* solid, hover/focus rings on light bg */
+  --color-border-on-dark-strong: var(--color-cream);    /* solid, focus rings on dark bg */
+
+  /* ---------- Spacing (collection "Spacing") ---------- */
+  --spacing-3xs: 0.25rem;
+  --spacing-2xs: 0.5rem;
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 5rem;
+  --spacing-4xl: 6.5rem;
+  --spacing-5xl: 7.5rem;
+  --spacing-6xl: 11rem;
+
+  /* ---------- Radius (collection "Radius") ---------- */
+  --radius-none: 0;
+  --radius-sm: 0.3125rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 7.5rem;
+  --radius-full: 624.94rem;
+
+  /* ---------- Typography variables (collection "Typography") ---------- */
+  /* Season is a TRIAL font in the design. Licence is handled by the client.
+     Keep the fallback stack so the page degrades gracefully. */
+  --font-family-heading: "Season Collection VF-TRIAL", "Instrument Serif", Georgia, serif;
+  --font-family-body: "Manrope", system-ui, sans-serif;
+  --font-style-heading: 300;          /* "Serif Light" */
+  --font-style-body-regular: 400;
+  --font-style-body-medium: 500;
+  --font-style-body-bold: 700;
+  --font-size-caption: 0.75rem;
+  --font-size-note: 0.8125rem;
+  --font-size-xs: 0.875rem;
+  --font-size-compact: 0.9375rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.3125rem;
+  --font-size-xl: 1.75rem;
+  --font-size-2xl: 2.25rem;
+  --font-size-3xl: 3rem;
+  --font-size-4xl: 5rem;
+  --font-size-5xl: 8rem;
+  --font-size-6xl: 10rem;
+
+  /* ---------- Effects ---------- */
+  --shadow-floating: 0 0.5rem 2rem rgb(0 0 0 / 0.22);   /* Figma effect style "Shadow/Floating" */
+}
+
+/* ==========================================================================
+   Text styles (Figma local text styles). Line-height and letter-spacing are
+   stored as % in Figma, NOT as variables (a bound line-height would be px).
+   ========================================================================== */
+
+.display-xl { font: var(--font-style-heading) var(--font-size-6xl)/1.05 var(--font-family-heading); letter-spacing: -0.03em; }
+.display-lg { font: var(--font-style-heading) var(--font-size-5xl)/1.05 var(--font-family-heading); letter-spacing: -0.03em; }
+.heading-1  { font: var(--font-style-heading) var(--font-size-4xl)/1.10 var(--font-family-heading); letter-spacing: -0.03em; }
+.heading-2  { font: var(--font-style-heading) var(--font-size-3xl)/1.10 var(--font-family-heading); letter-spacing: -0.03em; }
+.heading-3  { font: var(--font-style-heading) var(--font-size-2xl)/1.10 var(--font-family-heading); letter-spacing: -0.03em; }
+.heading-4  { font: var(--font-style-heading) var(--font-size-xl)/1.40 var(--font-family-heading); letter-spacing: -0.03em; }
+
+.body-lg    { font: var(--font-style-body-regular) var(--font-size-lg)/1.5 var(--font-family-body); }
+.body-md    { font: var(--font-style-body-regular) var(--font-size-sm)/1.5 var(--font-family-body); }
+.body-sm    { font: var(--font-style-body-regular) var(--font-size-xs)/1.5 var(--font-family-body); }
+.body-input { font: var(--font-style-body-regular) var(--font-size-sm)/normal var(--font-family-body); }
+
+.label-lg      { font: var(--font-style-body-medium) var(--font-size-lg)/normal var(--font-family-body); }
+.label-md      { font: var(--font-style-body-medium) var(--font-size-md)/normal var(--font-family-body); }
+.label-md-bold { font: var(--font-style-body-bold) var(--font-size-md)/normal var(--font-family-body); }
+.label-sm      { font: var(--font-style-body-medium) var(--font-size-sm)/normal var(--font-family-body); }
+.label-compact { font: var(--font-style-body-medium) var(--font-size-compact)/normal var(--font-family-body); }
+.label-note    { font: var(--font-style-body-medium) var(--font-size-note)/normal var(--font-family-body); }
+.label-caption { font: var(--font-style-body-medium) var(--font-size-caption)/normal var(--font-family-body); }

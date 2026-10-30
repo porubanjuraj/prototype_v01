@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Close Button">
+<path d="M24 0.5C36.9787 0.5 47.5 11.0213 47.5 24C47.5 36.9787 36.9787 47.5 24 47.5C11.0213 47.5 0.5 36.9787 0.5 24C0.5 11.0213 11.0213 0.5 24 0.5Z" stroke="white"/>
+<path id="Close Icon" d="M17 17L24 24M24 24L31 31M24 24L31 17M24 24L17 31" stroke-width="1.5" stroke-linecap="round" stroke="white"/>
+</g>
+</svg>

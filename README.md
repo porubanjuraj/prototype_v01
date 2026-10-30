@@ -40,7 +40,7 @@ Potom `http://localhost:8780/`. (Fonty Manrope sa načítavajú z Google Fonts, 
 - **Mapa** – v dizajne je len karta „Bazén“; texty a fotky ostatných 5 zastávok sú ilustračné (`js/main.js`, objekt `places`).
 - **Teaser carousel** – 4. slide (Bowling) a poradie sú doplnené (`teasers` v `js/main.js`).
 - **Texty slidov Hall slideru 02–05** – pracovná verzia UX writera, priradenie fotiek 02–04 treba overiť.
-- **URL**: rezervačný systém (`Skontrolovať dostupnosť` → `#`), sociálne siete (`#`), poukazy, SK/EN, právne odkazy. Menu odkazuje na starý web `kastielmojmirovce.sk`.
+- **URL**: rezervačný systém (`Skontrolovať dostupnosť` → `#`), sociálne siete (`#`), poukazy, SK/EN, právne odkazy. Odkazy na podstránky sú zatiaľ `#`.
 - **Dátumy** – natívny `<input type="date">` v štýle Date Field (kalendár nie je v dizajne).
 - **Season font** je TRIAL (`assets/fonts/SeasonCollectionVF-TRIAL.ttf`); na verejné nasadenie treba licenciu. Používa osi `wght 300` + `SERF 100` („Serif Light“).
 
